@@ -1,3 +1,0 @@
-https://www.perl.org/books/beginning-perl/
-
-Note: Write Python script to auto-download all books from this list
