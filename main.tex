@@ -1,16 +1,16 @@
 \documentclass{article}
 
-\def\useMacro#1 {\input ./tex/#1 }
+\def\useMacro#1 {\input ./tex/#1 } % For convenience
 
 \usepackage{./tex/pkgs}
 
-\useMacro regs
-\useMacro defs
+\useMacro regs % Count and read registers defined here
+\useMacro defs % Functions to parse indices here
 
 \begin{document}
 
-\useMacro open
-\useMacro loop
+\useMacro open % Open three input-streams for title, filename, and page-count
+\useMacro loop % Loop over filenames and typeset each one
 \useMacro close
 
 \end{document}
