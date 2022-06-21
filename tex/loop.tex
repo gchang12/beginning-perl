@@ -1,21 +1,21 @@
 \loop
-    \begingroup
+    \begingroup % Needed in order  to match Index.pdf$
         \catcode`\^^M=9
         \global\read\fnameReader to \myFilename
     \endgroup
     \read\pgCtReader to \lastPgCt
     \read\titleReader to \myTitle
     \unless\ifeof\pgCtReader
-        \crPageCount=\lastPgCt
-        \advance\crPageCount by -1
+        \crPageCount=\lastPgCt % Casting number tokens to number register
+        \advance\crPageCount by -1 % Necessary to skip last page of all pdfs
         \includepdf[pages=1-\the\crPageCount]{./src/\myFilename}
-        \ifx\myFilename\myIndex
+        \ifx\myFilename\myIndex % Do not prefix index or intro
             \def\myFilename{.pdf}\relax
             \def\myIndex{Index.pdf}\relax
         \fi
-        \def\myPrefix{
+        \def\myPrefix{ % Prefix: Title
             \expandafter\getPrefix\myFilename\myTitle
         }
         \bookmark[page=\the\myPageCount]{\myPrefix}
-        \advance\myPageCount by \crPageCount
+        \advance\myPageCount by \crPageCount % TeX cannot bookmark current page number, so this workaround is necessary
 \repeat
