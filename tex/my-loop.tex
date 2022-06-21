@@ -1,0 +1,21 @@
+\loop
+    \begingroup
+        \catcode`\^^M=9
+        \global\read\fnameReader to \myFilename
+    \endgroup
+    \read\pgCtReader to \lastPgCt
+    \read\titleReader to \myTitle
+    \unless\ifeof\pgCtReader
+        \crPageCount=\lastPgCt
+        \advance\crPageCount by -1
+        \includepdf[pages=1-\the\crPageCount]{./src/\myFilename}
+        \ifx\myFilename\myIndex
+            \def\myFilename{.pdf}\relax
+            \def\myIndex{Index.pdf}\relax
+        \fi
+        \def\myPrefix{
+            \expandafter\getPrefix\myFilename\myTitle
+        }
+        \bookmark[page=\the\myPageCount]{\myPrefix}
+        \advance\myPageCount by \crPageCount
+\repeat

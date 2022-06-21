@@ -1,0 +1,16 @@
+\documentclass{article}
+
+\def\useMacro#1 {\input ./tex/#1 }
+
+\usepackage{./tex/my-pkg}
+
+\useMacro my-regs
+\useMacro my-defs
+
+\begin{document}
+
+\useMacro my-open
+\useMacro my-loop
+\useMacro my-close
+
+\end{document}
