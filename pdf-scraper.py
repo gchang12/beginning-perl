@@ -13,7 +13,7 @@ soup=BeautifulSoup(get(url).text,'html.parser')
 
 feature_list=soup.find('div',class_='feature_list')
 
-save_dir='src1'
+save_dir='src'
 
 try:
     mkdir(save_dir)
