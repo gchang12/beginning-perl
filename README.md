@@ -1,6 +1,6 @@
 https://www.perl.org/books/beginning-perl/
 
 # Usage
-`chmod 700;
+`chmod 700;`
 
-./create.sh`
+1`./create.sh`
