@@ -12,5 +12,7 @@ ls src/ | grep [A-J]\.pdf >> files.txt
 echo Index.pdf >> files.txt
 for i in $(cat files.txt); do pdfinfo ./src/$i | grep Pages: | sed s/Pages:\\s*//; done > page-counts.txt
 for i in $(cat files.txt); do less ./src/$i | head -n 1 | sed s/^\\s*//; done > titles.txt
+echo Please append "P2P.Wrox.Com" to line 34 of titles.txt. Press the Return key.
+read
 vi titles.txt # 24: Append " P2P.Wrox.Com"
 pdflatex main && pdflatex main
