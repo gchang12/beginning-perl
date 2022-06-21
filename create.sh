@@ -1,3 +1,4 @@
+mkdir src 2>/dev/null && (cp src.tar src; cd src; tar xf src.tar; cd ..)
 cd src
 my_rename() {
     for i in $1*.pdf; do mv $i ${i/$1/} 2>/dev/null; done;
