@@ -1,0 +1,25 @@
+Introduction
+First Steps In Perl
+Working with Simple Values
+Lists and Hashes
+Loops and Decisions
+Regular Expressions
+Files and Data
+References
+Subroutines
+Running and Debugging Perl
+Modules
+Object-Oriented Perl
+Introduction to CGI
+Perl and Databases
+The World of Perl
+Regular Expressions
+Special Variables
+Function Reference
+The Perl Standard Modules
+Command Line Reference
+The ASCII Character Set
+Licenses
+Solutions to Exercises
+Support, Errata and P2P.Wrox.Com
+Index
